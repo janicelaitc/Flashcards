@@ -1,5 +1,5 @@
 # Lab 2 Feedback
-**Please note that the README part of Lab2 is not updated, it is the same README as Lab1**
+**Please note that the README part of Lab2 is not updated, it is the same README as Lab1.**
 ## Instruciton manual (Required part)
 - The wordings in the instruction manual is fine and i did not find any mistakes, but personally i think it will be better if the Pro tips can either have a bigger font or maybe a different font so it stands out more
 - Overall there are a lot of information and words in this lab manual and i think that have more spacing/more small bullet points will help students better understanding the material, especially the fact that the labs are due the day of and they might not have enough time to read everything word to word 
