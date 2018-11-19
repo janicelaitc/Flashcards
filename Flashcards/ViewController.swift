@@ -43,6 +43,7 @@ class ViewController: UIViewController {
         print("current Index", currentIndex)
         updateLabels()
         updateNextPrevButtons()
+        animateCardout2()
         
     }
     
@@ -50,6 +51,7 @@ class ViewController: UIViewController {
         currentIndex = currentIndex + 1
         updateLabels()
         updateNextPrevButtons()
+        animateCardout()
         
     }
     
@@ -72,16 +74,56 @@ class ViewController: UIViewController {
             updateNextPrevButtons()
         }
         
-        
     }
+    
 
     @IBAction func didTapOnFlashCard(_ sender: Any) {
-        if frontLabel.isHidden == false {
-            frontLabel.isHidden = true}
-        else {
-            frontLabel.isHidden = false
+        flipFlaschcard()
+        
+    }
+    
+    func flipFlaschcard() {
+        UIView.transition(with: card, duration: 0.3, options: UIView.AnimationOptions.transitionCurlUp, animations: {self.frontLabel.isHidden = true})
+    }
+    
+    func animateCardout() {
+        UIView.animate(withDuration: 0.1, animations: { self.card.transform = CGAffineTransform.identity.translatedBy(x: -300, y: 0.0)}, completion: {finished in
+            
+            self.updateLabels()
+            self.animateCardin()
+            
+        })
+        
+    }
+    
+    func animateCardin() {
+        
+        card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
+        UIView.animate(withDuration: 0.1) {
+            self.card.transform = CGAffineTransform.identity
         }
     }
+    
+    func animateCardout2(){
+        UIView.animate(withDuration: 0.1, animations: { self.card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)}, completion: { finished in
+            
+            self.updateLabels()
+            self.animateCardin2()
+            
+        })
+        
+    }
+    
+    func animateCardin2() {
+        
+        card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)
+        
+        UIView.animate(withDuration: 0.1) {
+            self.card.transform = CGAffineTransform.identity
+        }
+    }
+    
+    
     
     override func prepare (for segue: UIStoryboardSegue, sender: Any?)
     {
